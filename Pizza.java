@@ -1,6 +1,6 @@
 package AdvancedLevelEnum;
 
-public class Pizza {
+public class Pizza implements Cloneable {
 
 	
 	 private String name;
@@ -35,5 +35,11 @@ public class Pizza {
 
 	    public double getPrice() {
 	        return price;
+	      
 }
+	    @Override
+	   protected Object clone() throws CloneNotSupportedException {
+		   return super.clone();
+	   }
+	    
 }
