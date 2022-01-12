@@ -2,7 +2,7 @@ package AdvancedLevelEnum;
 
 public class PizzaApp {
 	
-	 public static void main(String[] args) throws CloneNotSupportedException {
+	 public static void main(String[] args, String name "Margarita") throws CloneNotSupportedException {
 	        System.out.println("Available sizes:");
 	        for (PizzaSize pizzaSize : PizzaSize.values()) {
 	            System.out.println("- " + pizzaSize.getPizzaSizeText());
@@ -20,6 +20,9 @@ public class PizzaApp {
 	        System.out.println("Name: " + samePizza.getName());
 	        System.out.println("Size: " + samePizza.getPizzaSize().getPizzaSizeText());
 	        System.out.println("Price: $" + samePizza.getPrice());
+	        
+	      
+	        System.out.println(pizzaOrder.equals(pizzaOrder));
 	        
 	    }
 

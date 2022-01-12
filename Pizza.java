@@ -1,5 +1,7 @@
 package AdvancedLevelEnum;
 
+import java.util.Objects;
+
 public class Pizza implements Cloneable {
 
 	
@@ -41,5 +43,20 @@ public class Pizza implements Cloneable {
 	   protected Object clone() throws CloneNotSupportedException {
 		   return super.clone();
 	   }
+	    @Override
+	    public boolean equals(Object O) {
+	    	if (this == O) return true;
+	    	if (O == null || getClass() != O.getClass()) return false;
+	    	Pizza pizza = (Pizza) O;
+	    	return Double.compare(pizza.price, price) == 0 &&
+	    			Objects.equals(name, pizza.name) &&
+	    			pizzaSize == pizza.pizzaSize;
+	    	
+	    }
+	    
+	    @Override
+	    public int hashCode() {
+	    	return Objects.hash(name, pizzaSize, price);
+	    }
 	    
 }
