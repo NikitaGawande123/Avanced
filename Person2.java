@@ -1,6 +1,6 @@
 package AdvancedLevelMethodReferenceStaticRfrncMtd;
 
-public class Person2 {
+public class Person2 implements Comparable{
 	
 	private String name;
 	private int age;
@@ -27,6 +27,12 @@ public class Person2 {
 	
 
 }
+
+	@Override
+	public int compareTo(Object o) {
+		Person2 per = (Person2) o;
+		return this.getAge().compareTo(Person2.getAge());
+	}
 
 
 }

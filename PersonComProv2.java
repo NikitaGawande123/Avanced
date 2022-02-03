@@ -2,8 +2,6 @@ package AdvancedLevelMethodReferenceStaticRfrncMtd;
 
 import java.util.Comparator;
 
-import AdvancedLevelMethodReferenceInstanceObj.Person1;
-
 public class PersonComProv2 {
 
 	public static int compareByNameAndAge(Person2 person11, Person2 person22) {

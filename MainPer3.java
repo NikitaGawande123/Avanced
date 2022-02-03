@@ -1,9 +1,9 @@
 package AdvancedLevelMethodReferenceStaticRfrncMtd;
 
+import java.util.HashSet;
 import java.util.List;
-
-import AdvancedLevelMethodReferenceInstanceObj.Person1;
-import AdvancedLevelMethodReferenceInstanceObj.PersonComProv;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class MainPer3 {
 
@@ -20,7 +20,12 @@ public class MainPer3 {
 		.forEach(System.out::println);
 		
 
-
+		List<Integer> num = List.of(11, 32, 45, 23, 65, 34);
+		Set<Integer> numSet = CllectionTransformer.transform(num, 	HashSet::new);
+		System.out.println(numSet);
+		
+		Set<Person2> PersonSet = CllectionTransformer.transform(People, TreeSet::new);
+		System.out.println(PersonSet);
 
 	}
 
