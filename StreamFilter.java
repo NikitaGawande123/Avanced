@@ -1,6 +1,9 @@
 package AdvancedLevelStreamIntrod;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StreamFilter {
 
@@ -14,9 +17,20 @@ public class StreamFilter {
 				new Product("Pasta", "Veg", 90, 7),
 				new Product("Qubab", "Non-Veg", 100, 6)
 				);
-Food.stream()
-.filter(Foods -> Foods.getPrice() > 10 && Foods.getType().equals("Veg"))
-.forEach(System.out::println);
+        List<Product> cheapFood = new ArrayList<>();
+        Food.stream()
+        .filter(Foods ->Foods.getPrice()< 90)
+        .forEach(cheapFood ::add);
+        System.out.println(cheapFood);
+        
+        Map<Integer, Product> SmartWatches = new HashMap<>();
+        SmartWatches.put(1, new Product("Samosa", "Veg", 20, 9));
+        
+        SmartWatches.entrySet().stream()
+        .filter(Product -> Product.getValue() != null &&
+        Product.getValue().getType().equals("Veg")) 
+        .forEach(Product -> System.out.println(Product.getValue().getName() + "-" +
+        Product.getValue().getType() + "- $" + Product.getValue().getPrice()));
+		
 	}
-
 }
